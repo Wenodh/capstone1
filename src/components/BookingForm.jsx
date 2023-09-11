@@ -30,7 +30,7 @@ const BookingForm = ({
                     type="date"
                     id="res_date"
                     required
-                    value={bookingData.date}
+                    value={bookingData?.date}
                     onChange={(e) => {
                         setBookingData({
                             ...bookingData,
@@ -46,7 +46,7 @@ const BookingForm = ({
                 <select
                     id="res_time"
                     className="p-text"
-                    value={bookingData.time}
+                    value={bookingData?.time}
                     required
                     onChange={(e) => {
                         setBookingData({
@@ -57,7 +57,7 @@ const BookingForm = ({
                     aria-label="Time"
                 >
                     <option value="">-- Select Time --</option>
-                    {availableTimes.map((time, index) => (
+                    {availableTimes?.map((time, index) => (
                         <option key={index} value={time}>
                             {time}
                         </option>
@@ -75,7 +75,7 @@ const BookingForm = ({
                     id="guests"
                     name="guests"
                     className="p-text"
-                    value={bookingData.guests}
+                    value={bookingData?.guests}
                     onChange={(e) => {
                         setBookingData({
                             ...bookingData,
@@ -92,7 +92,7 @@ const BookingForm = ({
                     required
                     name="occasion"
                     className="p-text"
-                    value={bookingData.occasion}
+                    value={bookingData?.occasion}
                     onChange={(e) => {
                         setBookingData({
                             ...bookingData,
@@ -111,10 +111,10 @@ const BookingForm = ({
                     id="submitBtn"
                     data-testid="submitBtn"
                     disabled={
-                        !bookingData.date ||
-                        !bookingData.time ||
-                        !bookingData.guests ||
-                        !bookingData.occasion
+                        !bookingData?.date ||
+                        !bookingData?.time ||
+                        !bookingData?.guests ||
+                        !bookingData?.occasion
                     }
                     aria-label="On Click"
                 >
@@ -123,10 +123,10 @@ const BookingForm = ({
 
                 <div>
                     <p className="lead-text">Your reservation information: </p>
-                    <p>Date: {bookingData.date}</p>
-                    <p>Time: {bookingData.time}</p>
-                    <p>Guests: {bookingData.guests}</p>
-                    <p>Occasion: {bookingData.occasion}</p>
+                    <p>Date: {bookingData?.date}</p>
+                    <p>Time: {bookingData?.time}</p>
+                    <p>Guests: {bookingData?.guests}</p>
+                    <p>Occasion: {bookingData?.occasion}</p>
                 </div>
             </form>
         </>
