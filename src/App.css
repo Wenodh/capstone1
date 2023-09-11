@@ -1,38 +1,572 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+    height: 40vmin;
+    pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+:root {
+    --primaryGreen: #495e57;
+    --primaryYellow: #f4ce14;
+    --secondaryOrange: #ee9972;
+    --secondarySalmon: #fbdabb;
+    --secondaryWhite: #edefee;
+    --secondaryBlack: #333333;
+    --secondaryGrey: #f5f5f5;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.displayTitle {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 77px;
+    color: var(--secondaryBlack);
+}
+.lead-text {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.card-title-text {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.p-text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.col-1 {
+    width: 8.33%;
+}
+.col-2 {
+    width: 16.66%;
+}
+.col-3 {
+    width: 25%;
+}
+.col-4 {
+    width: 33.33%;
+}
+.col-5 {
+    width: 41.66%;
+}
+.col-6 {
+    width: 50%;
+}
+.col-7 {
+    width: 58.33%;
+}
+.col-8 {
+    width: 66.66%;
+}
+.col-9 {
+    width: 75%;
+}
+.col-10 {
+    width: 83.33%;
+}
+.col-11 {
+    width: 91.66%;
+}
+.col-12 {
+    width: 100%;
+}
+
+[class*='col-'] {
+    float: left;
+    padding: 15px;
+    /*border: 1px solid red;*/
+}
+
+.row::after {
+    content: '';
+    clear: both;
+    display: table;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.pillBtn {
+    width: 205px;
+    height: 53px;
+    background-color: var(--primaryYellow);
+    border-radius: 20px;
+    border: 0;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    color: var(--secondaryBlack);
+}
+
+.pillBtn:disabled {
+    background-color: var(--secondaryGrey);
+    cursor: not-allowed;
+}
+
+nav {
+    padding: 60px 0px;
+    margin: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-bar {
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.nav-bar a {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--secondaryBlack);
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.fillGreen {
+    background-color: var(--primaryGreen);
+    overflow: visible;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+}
+
+header h1 {
+    color: var(--primaryYellow);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 64px;
+    margin: 0;
+}
+
+header h2 {
+    color: var(--secondaryWhite);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    margin-top: 0;
+}
+
+header p {
+    color: var(--secondaryWhite);
+    max-width: 250px;
+}
+
+#restaurantFood {
+    position: absolute;
+    right: 0px;
+    bottom: -80px;
+    height: 429px;
+    width: 386px;
+    border-radius: 16px;
+    object-fit: cover;
+}
+
+.main-head {
+    align-items: center;
+}
+
+main p {
+    color: var(--primaryGreen);
+}
+
+.cards {
+    margin-top: 30px;
+    align-items: center;
+}
+.card {
+    width: 31%;
+    height: 450px;
+    background-color: var(--secondaryGrey);
+    border-radius: 20px;
+}
+.card-head {
+    align-items: center;
+}
+.card-content {
+    margin: 0 20px;
+}
+.card img {
+    width: 100%;
+    height: 186px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+.card-title {
+    color: var(--secondaryBlack);
+}
+.card-price {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--secondaryOrange);
+}
+
+.card p {
+    height: 110px;
+    overflow-y: scroll;
+}
+
+.card h5 {
+    position: relative;
+    bottom: 15px;
+}
+
+.customerCards {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    gap: 20px;
+}
+
+.customerCard {
+    display: flex;
+    flex: row;
+    gap: 10px;
+    align-items: center;
+    background-color: var(--secondaryGrey);
+    border-radius: 16px;
+}
+
+.left {
+    text-align: center;
+}
+
+.left p {
+    padding: 0;
+    margin: 5px;
+}
+
+.right {
+    width: 100px;
+}
+
+.customerCard img {
+    max-width: 70px;
+    margin-left: 5px;
+}
+
+.chicago-head {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    margin: 80px 0;
+    background-color: var(--secondaryGrey);
+    border-radius: 20px;
+}
+
+.chicago-images {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 300px;
+    height: 330px;
+}
+
+.chicago-head p {
+    max-width: 250px;
+}
+
+.chicago-images img {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.chicago-images img:first-child {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.chicago-images img:last-child {
+    z-index: 2;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin: 50px 0;
+    color: var(--secondaryWhite);
+    align-items: flex-start;
+}
+
+footer li {
+    margin-bottom: 5px;
+}
+
+footer a {
+    color: var(--secondaryWhite);
+}
+
+.doormat {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.doormat img {
+    width: 200px;
+    height: 244px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+footer li:first-of-type {
+    margin-bottom: 15px;
+    width: min-content;
+}
+
+form {
+    margin: 50px auto;
+    display: grid;
+    grid-column: auto;
+    max-width: 300px;
+    gap: 20px;
+}
+
+#submitBtn {
+    width: 100%;
+}
+
+.confirm-box {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: var(--secondaryGrey);
+}
+
+@media only screen and (max-width: 1024px) {
+    [class*='col-'] {
+        width: 100%;
+    }
+    .row {
+        padding: 0 20px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    * {
+        overflow-x: hidden;
+    }
+    .displayTitle {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 48px;
+        color: var(--secondaryBlack);
+    }
+    .lead-text {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+    }
+    nav {
+        display: inline-block;
+    }
+    nav img {
+        position: absolute;
+        left: calc(50% - 73px);
+        top: 30px;
+    }
+    .nav-bar {
+        display: none;
+    }
+    .nav-toggle {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+        padding: 20px;
+        position: absolute;
+        left: 16px;
+        top: 15px;
+    }
+    .nav-toggle:hover {
+        background: #555;
+    }
+    nav.active .nav-bar {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #333;
+        padding: 10px 0;
+    }
+    nav.active .nav-bar ul {
+        flex-direction: column;
+    }
+
+    header,
+    footer,
+    nav,
+    main {
+        margin: 0;
+    }
+
+    #restaurantFood {
+        width: 147px;
+        height: 152px;
+        position: absolute;
+        right: 0px;
+        bottom: 20%;
+    }
+
+    .main-head {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    main h1 {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 48px;
+        color: var(--secondaryBlack);
+    }
+
+    .cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        flex-wrap: nowrap;
+        gap: 10px;
+    }
+
+    .card {
+        width: 100%;
+        height: auto;
+    }
+
+    .customerSay h1 {
+        text-align: center;
+    }
+
+    .customerCards {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .customerCard {
+        display: flex;
+        flex: row;
+        gap: 10px;
+        align-items: center;
+        background-color: var(--secondaryGrey);
+    }
+
+    .left {
+        width: 100px;
+        min-width: 100px;
+    }
+
+    .left p {
+        padding: 0;
+        margin: 5px;
+    }
+
+    .right {
+        width: auto;
+    }
+
+    .customerCard img {
+        max-width: 40px;
+        width: 40px;
+        margin-left: 5px;
+    }
+
+    .chicago-images {
+        display: none;
+    }
+
+    .chicago-head p {
+        max-width: 100%;
+    }
+
+    .doormat {
+        display: none;
+    }
 }

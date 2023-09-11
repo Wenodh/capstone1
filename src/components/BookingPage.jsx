@@ -1,18 +1,27 @@
 import React, { useState } from 'react';
 import BookingForm from './BookingForm';
 
-const BookingPage = (props) => {
+const BookingPage = ({
+    availableTimes,
+    initializeTimes,
+    updateTimes,
+    bookingData,
+    setBookingData,
+    submitForm,
+}) => {
     const handleSubmit = (data) => {
         console.log(data);
     };
     return (
         <>
-            <div>
-                BookingPage - the component for the table reservations page
-            </div>
             <BookingForm
                 handleSubmit={handleSubmit}
-                availableSlots={props.availableSlots}
+                availableTimes={availableTimes}
+                initializeTimes={initializeTimes}
+                updateTimes={updateTimes}
+                bookingData={bookingData}
+                setBookingData={setBookingData}
+                submitForm={submitForm}
             />
         </>
     );
