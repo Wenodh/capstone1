@@ -8,7 +8,13 @@ import HomePage from './components/HomePage';
 import Nav from './components/Nav';
 import Specials from './components/Specials';
 
-import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
+import {
+    BrowserRouter,
+    Routes,
+    Route,
+    useNavigate,
+    Link,
+} from 'react-router-dom';
 import { fetchAPI, submitAPI } from './api';
 import ConfirmedBooking from './components/ConfirmedBooking';
 
@@ -99,7 +105,68 @@ function Main() {
 }
 
 function Footer() {
-    return <footer>footer</footer>;
+    return (
+        <div className="row fillGreen">
+            <div className="col-2"></div>
+            <footer className="col-8">
+                <div className="doormat">
+                    <img
+                        src={
+                            'https://th.bing.com/th/id/OIP.e2klyJTXjZidyYcUN42fHwHaHa?w=160&h=180&c=7&r=0&o=5&pid=1.7'
+                        }
+                        alt="Restaurant image"
+                    />
+                    <ul className="p-text">
+                        <li className="card-title-text">Navigation</li>
+                        <li>
+                            <Link to="/">Home</Link>
+                        </li>
+                        <li>
+                            <Link to="/">About</Link>
+                        </li>
+                        <li>
+                            <Link to="/">Menu</Link>
+                        </li>
+                        <li>
+                            <Link to="/booking">Reservation</Link>
+                        </li>
+                        <li>
+                            <Link to="/">Order Online</Link>
+                        </li>
+                        <li>
+                            <Link to="/">Login</Link>
+                        </li>
+                    </ul>
+                </div>
+                <div className="contacts">
+                    <ul className="p-text">
+                        <li className="card-title-text">Contacts</li>
+                        <li>XXXXXXXXX, HYD</li>
+                        <li>+91 0987654321</li>
+                        <li>littlelemon@dummymail.com</li>
+                    </ul>
+                </div>
+                <div className="social">
+                    <ul className="p-text">
+                        <li className="card-title-text">Social</li>
+                        <li>
+                            <a href="www.facebook.com">Facebook</a>
+                        </li>
+                        <li>
+                            <a href="www.instagram.com">Instagram</a>
+                        </li>
+                        <li>
+                            <a href="twitter.com">Twitter</a>
+                        </li>
+                        <li>
+                            <a href="www.youtube.com/">YouTube</a>
+                        </li>
+                    </ul>
+                </div>
+            </footer>
+            <div className="col-2"></div>
+        </div>
+    );
 }
 
 function Header() {

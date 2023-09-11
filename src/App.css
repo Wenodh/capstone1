@@ -235,6 +235,11 @@ header p {
     object-fit: cover;
 }
 
+main {
+    min-height: 90vh;
+    background-color: var(--secondarySalmon);
+}
+
 .main-head {
     align-items: center;
 }
