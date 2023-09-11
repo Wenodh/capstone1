@@ -1,9 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react';
+import BookingForm from './BookingForm';
 
-const BookingPage = () => {
-  return (
-    <div>BookingPage - the component for the table reservations page</div>
-  )
-}
+const BookingPage = (props) => {
+    const handleSubmit = (data) => {
+        console.log(data);
+    };
+    return (
+        <>
+            <div>
+                BookingPage - the component for the table reservations page
+            </div>
+            <BookingForm
+                handleSubmit={handleSubmit}
+                availableSlots={props.availableSlots}
+            />
+        </>
+    );
+};
 
-export default BookingPage
+export default BookingPage;

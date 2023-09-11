@@ -21,12 +21,23 @@ function App() {
 
 export default App;
 function Main() {
+    const availableSlots = [
+        '17:00',
+        '18:00',
+        '19:00',
+        '20:00',
+        '21:00',
+        '22:00',
+    ];
     return (
         <main>
             main
             <Routes>
                 <Route path="/" element={<HomePage />}></Route>
-                <Route path="/booking" element={<BookingPage />}></Route>
+                <Route
+                    path="/booking"
+                    element={<BookingPage availableSlots={availableSlots} />}
+                ></Route>
                 <Route path="/calltoaction" element={<CallToAction />}></Route>
                 <Route path="/chicago" element={<Chicago />}></Route>
                 <Route path="/customersay" element={<CustomersSay />}></Route>
